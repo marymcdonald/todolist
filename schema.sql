@@ -3,13 +3,13 @@ CREATE TABLE users (
   password text NOT NULL
 );
 
-CREATE TABLE todolists(
+CREATE TABLE todolists (
   id serial PRIMARY KEY,
   title varchar(100) UNIQUE NOT NULL,
   username text NOT NULL REFERENCES users (username) ON DELETE CASCADE
 );
 
-CREATE TABLE todos(
+CREATE TABLE todos (
   id serial PRIMARY KEY,
   title varchar(100) NOT NULL,
   done boolean NOT NULL DEFAULT false,
